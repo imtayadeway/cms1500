@@ -1,0 +1,10 @@
+# Logfile created on 2014-02-24 15:47:37 -0500 by logger.rb/44203
+I, [2014-02-24T15:47:37.029480 #4185]  INFO -- : 0:  diff-lcs (1.2.5) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/diff-lcs-1.2.5.gemspec
+I, [2014-02-24T15:47:39.628976 #4185]  INFO -- : 0:  pdf-core (0.1.6) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/pdf-core-0.1.6.gemspec
+I, [2014-02-24T15:47:43.952405 #4185]  INFO -- : 0:  ttfunk (1.1.1) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/ttfunk-1.1.1.gemspec
+I, [2014-02-24T15:47:50.599587 #4185]  INFO -- : 0:  prawn (0.15.0) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/prawn-0.15.0.gemspec
+I, [2014-02-24T15:47:50.600753 #4185]  INFO -- : 0:  rspec-core (2.14.7) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/rspec-core-2.14.7.gemspec
+I, [2014-02-24T15:47:50.602007 #4185]  INFO -- : 0:  rspec-expectations (2.14.5) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/rspec-expectations-2.14.5.gemspec
+I, [2014-02-24T15:47:50.603032 #4185]  INFO -- : 0:  rspec-mocks (2.14.6) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/rspec-mocks-2.14.6.gemspec
+I, [2014-02-24T15:47:50.603985 #4185]  INFO -- : 0:  rspec (2.14.1) from /home/tim/.rvm/gems/ruby-2.1.0/specifications/rspec-2.14.1.gemspec
+I, [2014-02-24T15:47:50.604880 #4185]  INFO -- : 0:  bundler (1.5.0) from /home/tim/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.0.gemspec

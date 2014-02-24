@@ -6,5 +6,9 @@ module Cms1500
       @output = output
       yield self if block_given?
     end
+
+    def name
+      [last_name, first_name, middle_initial].join(', ')
+    end
   end
 end

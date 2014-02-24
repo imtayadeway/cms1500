@@ -12,14 +12,17 @@ module Cms1500
 
     describe "#build_section" do
       context "when passed some info" do
-        it "prints the info" do
-          expect(output).to receive(:puts).with('Doe, Jane, H')
-
+        before do
           subject.build_section(:patient) do |p|
             p.first_name = 'Jane'
             p.last_name = 'Doe'
             p.middle_initial = 'H'
           end
+        end
+
+        it "prints the info" do
+          expect(output).to receive(:puts).with('Doe, Jane, H')
+          subject.print
         end
       end
     end

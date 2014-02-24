@@ -13,11 +13,10 @@ module Cms1500
 
     def patient(&block)
       @patient ||= Patient.new(output, &block)
+    end
 
-      attrs = [:last_name, :first_name, :middle_initial]
-      text = attrs.map { |a| @patient.send(a) }.join(', ')
-
-      output.puts(text)
+    def print
+      output.puts(patient.name)
     end
   end
 end
