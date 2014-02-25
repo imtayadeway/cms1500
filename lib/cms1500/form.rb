@@ -18,12 +18,12 @@ module Cms1500
       line_items << LineItem.new(number, &block)
     end
 
-    def patient(&block)
-      @patient ||= Patient.new(&block)
-    end
-
     def carrier(&block)
       @carrier ||= Carrier.new(&block)
+    end
+
+    def patient(&block)
+      @patient ||= Patient.new(&block)
     end
 
     def insured(&block)
@@ -38,14 +38,30 @@ module Cms1500
       @physician ||= Physician.new(&block)
     end
 
+    def sections
+      [carrier, patient, insured, other_insured, physician, line_items].flatten
+    end
+
     def print
-      lines.each do |line|
-        output.puts(line.content)
+      if valid?
+        lines.each do |line|
+          output.puts(line.content)
+        end
+      else
+        sections.each do |section|
+          next if section.valid?
+          puts "[#{ section.class }]"
+          section.errors.full_messages.each { |msg| puts msg }
+        end
       end
     end
 
     def to_pdf
       #
+    end
+
+    def valid?
+      sections.all?(&:valid?)
     end
   end
 end

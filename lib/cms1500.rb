@@ -1,4 +1,5 @@
 require 'active_model'
+I18n.enforce_available_locales = false
 
 module Cms1500
   module Section
@@ -46,6 +47,10 @@ module Cms1500
   class InsuredPerson < Person
     attr_accessor :id_number, :group_number, :policy_number, :feca_number,
       :employer_name, :school_name, :plan_name, :program_name
+
+    validates :id_number,
+      presence: true,
+      numericality: true
   end
 end
 

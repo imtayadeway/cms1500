@@ -1,5 +1,14 @@
 -
   -
+    :name: "Program"
+    :indent: 5
+    :source: insured.program
+  -
+    :name: "Insured's I.D. Number"
+    :indent: 50
+    :source: insured.id_number
+-
+  -
     :name: "Patient's Name"
     :indent: 5
     :source: patient.name
