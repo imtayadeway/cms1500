@@ -1,0 +1,13 @@
+-
+  -
+    :name: "Patient's Name"
+    :indent: 5
+    :source: patient.name
+  -
+    :name: "Patient's Birth Date"
+    :indent: 20
+    :source: patient.date_of_birth
+  -
+    :name: "Insured's Name"
+    :indent: 50
+    :source: insured.name

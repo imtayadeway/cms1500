@@ -2,10 +2,7 @@ require 'active_model'
 
 module Cms1500
   module Section
-    attr_accessor :output
-
-    def initialize(output, &block)
-      @output = output
+    def initialize(&block)
       yield self if block_given?
     end
 
@@ -52,6 +49,7 @@ module Cms1500
   end
 end
 
+require 'yaml'
 require 'prawn'
 require 'cms1500/form'
 require 'cms1500/carrier'
@@ -59,6 +57,8 @@ require 'cms1500/patient'
 require 'cms1500/insured'
 require 'cms1500/other_insured'
 require 'cms1500/physician'
+require 'cms1500/line_item'
+require 'cms1500/line'
 
 module Cms1500
   def self.build_form(options = {}, &block)

@@ -2,7 +2,6 @@ require 'spec_helper'
 
 module Cms1500
   describe Physician do
-    subject { Physician.new($stdout) }
     it { should respond_to(:name) }
     it { should respond_to(:npi) }
     it { should respond_to(:outside_lab) }
