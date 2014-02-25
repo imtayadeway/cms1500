@@ -7,7 +7,12 @@ module Cms1500
 
     it { should respond_to(:output) }
     it { should respond_to(:build_section) }
+    it { should respond_to(:to_pdf) }
+    it { should respond_to(:carrier) }
     it { should respond_to(:patient) }
+    it { should respond_to(:insured) }
+    it { should respond_to(:other_insured) }
+    it { should respond_to(:physician) }
     its(:output) { should == output }
 
     describe "#build_section" do

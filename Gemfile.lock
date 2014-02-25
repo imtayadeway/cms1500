@@ -1,7 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (4.0.3)
+      activesupport (= 4.0.3)
+      builder (~> 3.1.0)
+    activesupport (4.0.3)
+      i18n (~> 0.6, >= 0.6.4)
+      minitest (~> 4.2)
+      multi_json (~> 1.3)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    atomic (1.1.14)
+    builder (3.1.4)
     diff-lcs (1.2.5)
+    i18n (0.6.9)
+    minitest (4.7.5)
+    multi_json (1.8.4)
     pdf-core (0.1.6)
     prawn (0.15.0)
       pdf-core (~> 0.1.3)
@@ -14,11 +28,15 @@ GEM
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
+    thread_safe (0.1.3)
+      atomic
     ttfunk (1.1.1)
+    tzinfo (0.3.38)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel (~> 4.0)
   prawn (~> 0.15)
   rspec (~> 2.14)

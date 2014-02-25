@@ -1,14 +1,9 @@
 module Cms1500
-  class Patient
-    attr_accessor :output, :first_name, :last_name, :middle_initial
+  class Patient < Person
+    include ActiveModel::Validations
+    include Section
 
-    def initialize(output, &block)
-      @output = output
-      yield self if block_given?
-    end
+    attr_accessor :relationship_to_insured, :status, :condition
 
-    def name
-      [last_name, first_name, middle_initial].join(', ')
-    end
   end
 end
