@@ -19,10 +19,10 @@ Cms1500.build_form do |f|
   end
 
   f.build_section(:insured) do |i|
+    # since patient is insured, person attributes copied from patient
     i.program = :medicare
     i.id_number = 123456789
     i.policy_number = 123456789 # or group or feca number
-    # same as patient
     i.employer_name = 'Mr Burns' # or school_name
     i.plan_name = 'Insurance Plan' # or program_name
     i.another_plan = true # requires other insured section
@@ -65,6 +65,6 @@ Cms1500.build_form do |f|
     l.charges = 100.5
     l.units = 1 # or days
     l.epstd_family_plan = ''
-    l.rendering_provider_id =
+    l.rendering_provider_id = ''
   end
 end
