@@ -50,7 +50,7 @@ module Cms1500
     end
 
     def to_pdf
-      #
+      raise NotImplementedError
     end
 
     def valid?
