@@ -3,10 +3,16 @@
     :name: "Program"
     :indent: 5
     :source: insured.program
+    :type: :checkbox
+    :values:
+      :medicare: 2
+      :medicaid: 4
+      :tricare: 6
   -
     :name: "Insured's I.D. Number"
     :indent: 50
     :source: insured.id_number
+
 -
   -
     :name: "Patient's Name"

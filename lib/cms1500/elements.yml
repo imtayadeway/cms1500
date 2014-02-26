@@ -1,0 +1,11 @@
+-
+  :name: "Patient's Name"
+  :coords: [12, 4]
+  :source: patient.name
+-
+  :name: "Patient's Sex"
+  :type: :checkbox
+  :coords:
+    :male: [12, 45]
+    :female: [12, 50]
+  :source: patient.sex

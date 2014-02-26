@@ -9,7 +9,6 @@ module Cms1500
     it { should respond_to(:build_section) }
     it { should respond_to(:build_line) }
     it { should respond_to(:line_items) }
-    it { should respond_to(:lines) }
     it { should respond_to(:to_pdf) }
     it { should respond_to(:carrier) }
     it { should respond_to(:patient) }
@@ -19,7 +18,7 @@ module Cms1500
     it { should respond_to(:sections) }
     its(:output) { should == output }
 
-    describe "#print" do
+    describe "#to_text" do
       context "when sections are built" do
         before do
           subject.build_section(:patient) do |p|
@@ -50,7 +49,7 @@ module Cms1500
 
         it "prints the info" do
           expect(output).to receive(:puts).with(/Doe, Jane, H/)
-          subject.print
+          subject.to_text
         end
       end
     end

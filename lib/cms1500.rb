@@ -64,6 +64,9 @@ require 'cms1500/other_insured'
 require 'cms1500/physician'
 require 'cms1500/line_item'
 require 'cms1500/line'
+require 'cms1500/box'
+require 'cms1500/text'
+require 'cms1500/element'
 
 module Cms1500
   def self.build_form(options = {}, &block)

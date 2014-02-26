@@ -1,12 +1,10 @@
 module Cms1500
   class Form
-    attr_accessor :output, :line_items, :lines
+    attr_accessor :output, :line_items
 
     def initialize(options = {}, &block)
       @output = options.fetch(:output, $stdout)
       @line_items = []
-      config = File.open(File.join(File.dirname(__FILE__), 'lines.yml'))
-      @lines = YAML.load_file(config).map { |boxes| Line.new(self, boxes) }
       yield self if block_given?
     end
 
@@ -42,17 +40,12 @@ module Cms1500
       [carrier, patient, insured, other_insured, physician, line_items].flatten
     end
 
-    def print
+    def to_text
       if valid?
-        lines.each do |line|
-          output.puts(line.content)
-        end
+        text = Text.new(self)
+        output.puts(text.content)
       else
-        sections.each do |section|
-          next if section.valid?
-          puts "[#{ section.class }]"
-          section.errors.full_messages.each { |msg| puts msg }
-        end
+        print_validation_messages
       end
     end
 
@@ -62,6 +55,14 @@ module Cms1500
 
     def valid?
       sections.all?(&:valid?)
+    end
+
+    def print_validation_messages
+      sections.each do |section|
+        next if section.valid?
+        puts "[#{ section.class }]"
+        section.errors.full_messages.each { |msg| puts msg }
+      end
     end
   end
 end
