@@ -25,7 +25,7 @@ module Cms1500
     end
 
     def insured(&block)
-      @insured ||= Insured.new(&block)
+      @insured ||= Insured.new(self_insured_options, &block)
     end
 
     def other_insured(&block)
@@ -62,6 +62,16 @@ module Cms1500
         next if section.valid?
         puts "[#{ section.class }]"
         section.errors.full_messages.each { |msg| puts msg }
+      end
+    end
+
+    def self_insured_options
+      if patient.relationship_to_insured == :self
+        Person.attributes.inject({}) do |options, attribute|
+          options[attribute] = patient.send(attribute)
+        end
+      else
+        {}
       end
     end
   end

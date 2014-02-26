@@ -26,8 +26,22 @@ module Cms1500
     validate :valid_sex
     validate :valid_dob
 
-    attr_accessor :first_name, :last_name, :middle_initial,
-      :date_of_birth, :sex, :address, :city, :state, :zip_code, :telephone
+    def self.attributes
+      [
+        :first_name,
+        :last_name,
+        :middle_initial,
+        :date_of_birth,
+        :sex,
+        :address,
+        :city,
+        :state,
+        :zip_code,
+        :telephone
+      ]
+    end
+
+    attr_accessor *self.attributes
 
     def name
       [last_name, first_name, middle_initial].compact.join(', ')
